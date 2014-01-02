@@ -1,0 +1,57 @@
+    ceci est une introduction tres longue qui depasse la longueure authorisee 
+de 80 caracteres. Lorsqu'un espace est rencontre. 
+La je demarre une nouvelle ligne.
+
+*** lemme 1 : [titre d'un lemme] ***
+    contenu du lemme de l'introduction.
+***** FIN *****
+
+    Suite de l'introduction, ceci est un paragraphe apres un environnement. 
+Test de mise en forme de la mort. Pour voir comment ca rend a la fin. Dans 
+cette phrase j'utilise le caractere % .
+
+1 : titre de section
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
+rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat 
+laoreet ipsum interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean 
+at massa a nibh eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin 
+sem sed, semper massa. Fusce vehicula venenatis fermentum.
+
+1.1 : titre de sous section
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
+rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat 
+laoreet ipsum interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean 
+at massa a nibh eleifend viverra.
+
+2 : titre de deuxieme section
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
+rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat 
+laoreet ipsum interdum ut.
+
+*** definition 1 : [Definition] ***
+    Une definition est une portion de texte visant a montrer a son lecteur une 
+image de son objet.
+***** FIN *****
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
+rhoncus tortor gravida sollicitudin.
+
+2.1 : 
+    Contenu d'une sous section sans titre.Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida 
+sollicitudin.
+
+*** lemme 2 : [titre d'un autre lemme] ***
+    Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh 
+eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper 
+massa.
+***** FIN *****
+
+    Suite de la sous section
+
+3 : Encore une section
+
+    Le contenu de la section supplementaire
