@@ -12,15 +12,17 @@ int comment = 0;
 mot [^ \t\n\f\r\\{}%]+
 
 %%
-\\section {return(SECTION);}
+\\para	{firstWord = 1;}
 
-\\ssection {return(SSECTION);}
+\\section {firstWord = 1;return(SECTION);}
 
-\\lemme {return(LEMME);}
+\\ssection {firstWord = 1;return(SSECTION);}
 
-\\def {return(DEF);}
+\\lemme { firstWord = 0; return(LEMME);}
 
-\\end {return(ENDENV);}
+\\def {firstWord = 0; return(DEF);}
+
+\\end {firstWord = 1; return(ENDENV);}
 
 \{ {return('{');}
 
@@ -33,8 +35,12 @@ mot [^ \t\n\f\r\\{}%]+
 (\\)+ {strncpy(yylval.word, "\n", 256); return(WORD);}
 
 {mot} {if (!comment) {
-         strncpy(yylval.word, yytext, 256); 
-         return(WORD);
+	strncpy(yylval.word, yytext, 256); 
+	if (firstWord) {
+         return(PARA);
+	} else {
+	 return(WORD);
+	}
        }
       }
 
