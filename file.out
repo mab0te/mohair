@@ -2,22 +2,74 @@
 
 
     ceci est une introduction tres longue qui depasse la longueur autorisee de 
-80 caracteres. Lorsqu'un espace est rencontre. 
-La je demarre une nouvelle ligne. 
+caracteres. Lorsqu'un espace est rencontre. 
+ La je demarre une nouvelle ligne. 
 
 *** lemme 1 : [titre d'un lemme] ***
     contenu du lemme de l'introduction. 
 ***** FIN *****
 
-    Suite de l'introduction, ceci est un paragraphe apres un environnement. 
-Test de mise en forme de la mort. Pour voir comment ca rend a la fin. Dans 
-cette phrase j'utilise le caractere % . 
+    Suite de l'introduction, ceci est un paragraphe apres un environnement. Test
+de mise en forme de la mort. Pour voir comment ca rend a la fin. Dans cette 
+j'utilise le caractere % . 
 
 1 :
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
-rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat 
-laoreet ipsum interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean 
-at massa a nibh eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin 
-sem sed, semper massa. Fusce vehicula venenatis fermentum. 
+tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum
+interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean at massa a 
+eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper 
+Fusce vehicula venenatis fermentum. 
+
+1.1 : titre de sous section
+
+    Lorem ipsum dolor sit amet, 
+
+    consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida 
+Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut. Cras lacinia 
+vel massa egestas mattis. Aenean at massa a nibh eleifend viverra. 
+
+2 : titre de deuxieme section
+
+2.1 : sous section direct
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
+tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum
+interdum ut. 
+
+*** definition 1 : [Definition] ***
+    Une definition est une portion de texte visant a montrer a son lecteur une 
+de son objet. 
+***** FIN *****
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque 
+tortor gravida sollicitudin. 
+
+2.2 :
+
+    Contenu d'une sous section sans titre.Lorem ipsum dolor sit amet, 
+adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. 
+
+*** lemme 2 : [titre d'un autre lemme] ***
+    Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh 
+viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper massa. 
+***** FIN *****
+
+    Suite de la sous section 
+
+3 : Encore une section
+
+    Le contenu de la section supplementaire 
+
+4 :
+
+4.1 :
+
+5 :
+
+5.1 :
+
+5.2 :
+
+    LALALALA 
 
