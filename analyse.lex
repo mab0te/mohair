@@ -4,7 +4,10 @@
 #include <unistd.h>
 #include <string.h>
 
-#define FILE_LEN 256
+#ifndef STR_LEN
+#define STR_LEN 256
+#define LIN_LEN 80
+#endif
 
 int comment = 0;
 %}
@@ -12,6 +15,8 @@ int comment = 0;
 mot [^ \t\n\f\r\\{}%]+
 
 %%
+\\title {firstWord = 0;return(TITLE);}
+
 \\para	{firstWord = 1;}
 
 \\section {firstWord = 1;return(SECTION);}
@@ -32,10 +37,10 @@ mot [^ \t\n\f\r\\{}%]+
 
 \\% {strncpy(yylval.word, "%", 256); return(WORD);}
 
-(\\)+ {strncpy(yylval.word, "\n", 256); return(WORD);}
+(\\)+ {strncpy(yylval.word, "\n", STR_LEN); return(WORD);}
 
 {mot} {if (!comment) {
-	strncpy(yylval.word, yytext, 256); 
+	strncpy(yylval.word, yytext, STR_LEN); 
 	if (firstWord) {
          return(PARA);
 	} else {
