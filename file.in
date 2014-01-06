@@ -1,4 +1,14 @@
+\setsize{section}{7}
+\setsize{ssection}{6}
+\setsize{env}{5}
+\setsize{text}{4}
+\setsize{title}{8}
+\author{Ferry Gaetan}
+\author{Zigh Benjamin}
 \title{Un Beau Titre}
+
+\begindocument
+
 
 ceci est une introduction tres longue qui depasse la longueur autorisee de 80 caracteres. Lorsqu'un espace est rencontre. \\
 La je demarre une nouvelle ligne.

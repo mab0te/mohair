@@ -10,11 +10,25 @@
 #endif
 
 int comment = 0;
+int inDocument = 0;
 %}
 
 mot [^ \t\n\f\r\\{}%]+
 
+number [0-9]+
 %%
+
+
+\\author {return(AUTHOR);}
+
+\\setpagewidth {return(WIDTH);}
+
+\\setsize {return(SETSIZE);}
+
+\\setindent {return(INDENT);}
+
+\\begindocument {inDocument = 1; return(INDOC);}
+
 \\title {firstWord = 0;return(TITLE);}
 
 \\para	{firstWord = 1;}
@@ -38,6 +52,8 @@ mot [^ \t\n\f\r\\{}%]+
 \\% {strncpy(yylval.word, "%", 256); return(WORD);}
 
 (\\)+ {strncpy(yylval.word, "\n", STR_LEN); return(WORD);}
+
+{number} {if (inDocument) {REJECT;} else {yylval.nb = atoi(yytext); return(NUMBER);}}
 
 {mot} {if (!comment) {
 	strncpy(yylval.word, yytext, STR_LEN); 
