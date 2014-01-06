@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 
 #ifndef STR_LEN
 #define STR_LEN 256
@@ -36,11 +39,11 @@ int printWord(const char *word) {
      	charNb = 0;
 		} else {
 			printf("%s", word);
-     	charNb += len + 1;
+     	charNb += len;
 	  }
   } else {
-    printf("\n");
-    charNb = 0;
+    printf("\n%s", word);
+    charNb = strlen(word);
   }
 	return EXIT_SUCCESS;
 }
@@ -50,7 +53,7 @@ int printMainTitle(const char *word) {
 	int i;
 	len = strlen(word);
 	if (len > LIN_LEN) {
-		printf("il est trop gros ton titre monsieur");
+		fprintf(stderr, "Le titre est trop long. (80 caractères max).\n");
 	} else {
 		for (i = 0; i < (LIN_LEN - len) / 2; i++){
 			printf(" ");						
@@ -192,4 +195,31 @@ env : LEMME
 
 %%
 #include "lex.yy.c"
-
+//Point d'entré de l'application
+int main(int argc, char *argv[]) {
+	if (argc < 2) { //Trop peu d'argument
+		printf("Usage : %s inputFile [outputFile]", argv[0]);
+		exit(EXIT_SUCCESS); 
+	}
+	if ((yyin = fopen(argv[1], "r")) == NULL) { //Ouverture de l'entré
+		fprintf(stderr, "Error while opening %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	close(STDOUT_FILENO); //Fermeture de la sortie standard
+	if (argc > 2) { //Si sortie fournie
+	    //Ouverture de la sortie
+	    if ((open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1) {
+	        perror("Output file :");
+		    exit(EXIT_FAILURE);
+	    }
+	} else {
+	    //Ouverture de la sortie par defaut
+	    if ((open("a.html", O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1) {
+	        perror("Output file :");
+		    exit(EXIT_FAILURE);
+	    }
+	}
+	//Démarrage
+	yyparse();
+	exit(EXIT_SUCCESS);
+}

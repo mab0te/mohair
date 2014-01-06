@@ -4,7 +4,7 @@
 
 \begindocument
 
-Voici le rapport du projet de compilation de M1 Informatique de l'université de Rouen pour l'année 2013/2014. Ce rapport a été généré en utilisant l'application MoHAiR, développée en lex et yacc.
+Voici le rapport du projet de c\{ompilation de M1 Informatique de l'université de Rouen pour l'année 2013/2014. Ce rapport a été généré en utilisant l'application MoHAiR, développée en lex et yacc.
 
 \section{Présentation}
 
@@ -16,13 +16,14 @@ L'application a été conçue en utilisant les outils flex et yacc pour l'analys
 
 \section{Fonctionnalités}
 
-Nous avions initialement créé une application qui produisait du texte brut. Cette application est fournie avec les sources du projet mais ne représente pas la version finale. 
+ Nous avions initialement créé une application qui produisait du texte brut. Cette application est fournie avec les sources du projet mais ne représente pas la version finale. 
 
 En effet, notre version finale génère un document au format HTML5, format universellement compatible, facilement éditable et convertible. Nous avons repris la grammaire intégralement et l'avons enrichi à cette fin.
 
 Nous commencerons donc par lister les fonctionnalités disponibles dans les deux versions, puis celles reservées à la version HTML.
 
 \ssection{Les Sections}
+
 
 Comme vous avez pu le constater, notre générateur permet de structurer le document en sections et sous-sections. Ces différentes parties sont numérotées automatiquement et peuvent avoir ou non un titre. 
 \para
