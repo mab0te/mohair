@@ -175,11 +175,11 @@ int printWord(const char *word) {
 			  printf("%s\n", word);
           	charNb = 0;
 		  } else {
-			  printf("%s ", word);
+			  printf("%s", word);
           	charNb += len + 1;
 		  }
    } else {
-     printf("\n%s ", word);
+     printf("\n%s", word);
      charNb = 0;
    }
 	 return EXIT_SUCCESS;

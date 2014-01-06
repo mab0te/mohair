@@ -70,6 +70,8 @@ number [0-9]+
   }
 }
 
+[ ]+ {strncpy(yylval.word, " ", STR_LEN); return(WORD);}
+
 \n {if (comment == 1) {
       comment = 0;
     }

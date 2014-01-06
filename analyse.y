@@ -30,18 +30,18 @@ int indent() {
 
 int printWord(const char *word) {
 	size_t len = strlen(word);
-     if (charNb + len <= LIN_LEN) {
+  if (charNb + len <= LIN_LEN) {
 		if ((charNb + len) == LIN_LEN ) {
 			printf("%s\n", word);
-        	charNb = 0;
+     	charNb = 0;
 		} else {
-			printf("%s ", word);
-        	charNb += len + 1;
-		}
-     } else {
-        printf("\n");
-        charNb = 0;
-     }
+			printf("%s", word);
+     	charNb += len + 1;
+	  }
+  } else {
+    printf("\n");
+    charNb = 0;
+  }
 	return EXIT_SUCCESS;
 }
 
