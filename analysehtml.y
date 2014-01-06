@@ -21,10 +21,10 @@ int charNb = 0; //Nombre de caractère courant dans la ligne
 //Pour le style
 int width = 21; //Largeur de la page en cm 
 int fontSize = 4; //Taille de la font en mm
-int h1Size = 12; //Taille du titre principal en mm
-int h2Size = 10; //Taille des titre de section en mm
-int h3Size = 8; //Taille des titres de ssection en mm
-int h4Size = 6; //Taille des titres d'environnement en mm
+int h1Size = 8; //Taille du titre principal en mm
+int h2Size = 7; //Taille des titre de section en mm
+int h3Size = 6; //Taille des titres de ssection en mm
+int h4Size = 5; //Taille des titres d'environnement en mm
 
 int textIndent = 15; //Taille de l'indentation en mm
 
@@ -130,10 +130,12 @@ int generateStyle() {
 	printf("text-align: center;\n    ");	
 	printf("}\n\n");
 	printf("  h2 {\n   ");
-	printf("font-size: %dmm;\n    ", h2Size); //Pour la taille des sections
+	printf("font-size: %dmm;\n    ", h2Size);//Pour la taille des section
+	printf("padding-left: 3mm;\n    ");
 	printf("}\n\n");
 	printf("  h3 {\n   ");
-	printf("font-size: %dmm;\n    ", h3Size); //Pour la taille des ssection
+	printf("font-size: %dmm;\n    ", h3Size);//Pour la taille des ssection
+	printf("padding-left: 6mm;\n    ");
 	printf("}\n\n");
 	printf("  h4 {\n   ");
 	printf("font-size: %dmm;\n    ", h4Size); //Pour la taille des environnement
@@ -145,9 +147,10 @@ int generateStyle() {
 	printf("  #authors {\n   ");
 	printf("text-align: right;\n    ");
 	printf("}\n\n");
-	printf("  div[id^=\"Lemme\"], div[id^=\"Definition\"] {\n   ");
+	printf("  div[id^=\"Lemme\"], div[id^=\"Définition\"] {\n   ");
 	printf("border: 1px dashed black;\n    ");
 	printf("padding: 5mm 5mm 0 5mm;\n    ");
+	printf("margin-bottom: 2mm;\n    ");
 	printf("}\n");
 	printf(" </style>\n");
 	
@@ -383,12 +386,12 @@ env : LEMME
       {closePara(); closeEnv();}
     | DEF 
       '{' titre '}' 
-      {openEnv("Definition", &defNb, $3); openPara();}
+      {openEnv("Définition", &defNb, $3); openPara();}
       texte
       ENDENV
       {closePara(); closeEnv();}
     | DEF 
-      {openEnv("Definition", &defNb, NULL); openPara();
+      {openEnv("Définition", &defNb, NULL); openPara();
       }
       texte
       ENDENV

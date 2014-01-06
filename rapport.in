@@ -24,12 +24,36 @@ Nous commencerons donc par lister les fonctionnalités disponibles dans les deux
 
 \ssection{Les Sections}
 
-Comme vous avez pu le constater, notre générateur permet de structurer le document en sections et sous-sections. Ces différentes parties sont numérotées automatiquement et peuvent avoir ou non un titre. On les créé à l'aide des commandes \\section\{titre\}. \\section\{titre\}
+
+Comme vous avez pu le constater, notre générateur permet de structurer le document en sections et sous-sections. Ces différentes parties sont numérotées automatiquement et peuvent avoir ou non un titre. 
+\para
+On les crée à l'aide des commandes \\section\{titre\} et \\ssection\{titre\}.
 
 \ssection{Les Paragraphes}
-\ssection{Les Commentaires}
+
+Les paragraphes sont gérés automatiquement par l'application, néanmoins l'utilisateur peut, s'il le désire, créer un nouveau paragraphe à l'aide de la commande \\para. Les espaces et retours à la ligne superflus sont éliminés du code source.
+
+\ssection{Les Commentaires et l'Echappement}
+
+Il est possible d'ajouter des commentaires au code qui n'apparaitront pas dans le document compilé à l'aide du caractère \%.
+%D'ailleurs ceci est un commentaire et on ne le voit pas dans le rapport.
+Pour afficher les caractères spéciaux tels que \\ et \%, il suffit de les précéder dans le code du caractère d'échappement "\\".
+
 \ssection{Les Environnements}
+
+Deux environnements sont disponibles actuellement dans MoHAiR, le lemme et la définition. Ils sont tous les deux numérotés automatiquement. 
+
+\lemme{Voici un lemme}
+On le débute avec \\lemme\{titre\} et on le termine avec \\end.
+\end
+
+\def{Voici une définition}
+On la débute avec \\def\{titre\} et on la termine avec \\end.
+\end
+
 \ssection{Le Titre et Les Auteurs (HTML)}
+
+
 \ssection{Le Style (HTML)}
 
 \section{Notions}
