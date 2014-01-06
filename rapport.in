@@ -51,8 +51,28 @@ On la débute avec \\def\{titre\} et on la termine avec \\end.
 \end
 
 \ssection{Le Titre et Les Auteurs (HTML)}
-
+Dans la version HTML, le document est précédé d'une partie "déclaration". Cette partie est optionelle et terminée par la commande \\begindocument. Dans les déclarations, on peut ajouter un ou plusieurs auteurs avec \\author et un titre de document avec \\title\{titre\}.
 
 \ssection{Le Style (HTML)}
+Il est possible de paramêtrer certains éléments du style de la page:
+\para
+- \\setindent\{entier\} permet de fixer l'indentation des nouveaux paragraphes (en mm).
+\para
+- \\setpagewidth\{entier\} permet de fixer la largeur de la page (en mm).
+\para
+- \\setsize\{element\}\{entier\} permet de fixer la taille de la police (en mm) pour divers éléments du document. 
+\para 
+Les éléments modifiables sont: title, section, ssection, env et text.
 
-\section{Notions}
+\section{Technique}
+\ssection{Lex}
+
+L'analyseur lexical est relativement simple. Deux expressions régulières définissent respectivement les mots et les nombres. Deux contextes déterminent respectivement si on est dans ou hors d'un commentaire et si on est dans la partie déclaration ou dans le document en lui même.
+\para
+Chaque commande renvoie un token propre à l'analyseur lexical, avec éventuellement une valeur associée.
+
+\ssection{Yacc}
+
+L'analyseur syntaxique représente la majeure partie du travail. Il est fourni en deux versions: générateur de texte et générateur de HTML. Les deux versions contiennent un programme C qui récupère un fichier source et le chemin vers où compiler afin de produire un fichier texte ou HTML.
+\para
+Les différentes valeurs réglables sont stockées sous formes de variables globales. De nombreuses fonctions sont déclarées en entête et appelées à divers endroits dans la grammaire.
