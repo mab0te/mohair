@@ -55,18 +55,20 @@ number [0-9]+
 
 \\% {strncpy(yylval.word, "%", STR_LEN); return(WORD);}
 
+\\\\ {strncpy(yylval.word, "\\", STR_LEN); return(WORD);}
 
 {number} {if (inDocument) {REJECT;} else {yylval.nb = atoi(yytext); return(NUMBER);}}
 
-{mot} {if (!comment) {
-	strncpy(yylval.word, yytext, STR_LEN); 
-	if (firstWord) {
-         return(PARA);
-	} else {
-	 return(WORD);
-	}
-       }
-      }
+{mot} {
+  if (!comment) {
+	  strncpy(yylval.word, yytext, STR_LEN); 
+	  if (firstWord) {
+           return(PARA);
+	  } else {
+	   return(WORD);
+	  }
+  }
+}
 
 \n {if (comment == 1) {
       comment = 0;
