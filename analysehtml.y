@@ -141,7 +141,7 @@ int generateStyle() {
 int openDocument() {
 	charNb = 0;
 	firstWord = 1;
-	printf("<!doctype html>\n<head><title>%s</title></head>\n<html>\n <body>\n ", mainTitle);
+	printf("<!doctype html>\n<head><title>%s</title><meta charset='utf-8'></head>\n<html>\n <body>\n ", mainTitle);
 	generateStyle();
 	printf(" <div id='page'>\n");
 	printAuthors();
@@ -353,12 +353,12 @@ int main(int argc, char *argv[]) {
 	}
 	close(STDOUT_FILENO);
 	if (argc > 2) {
-	    if ((open(argv[2], O_WRONLY)) == -1) {
+	    if ((open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1) {
 	        perror("Output file :");
 		    exit(EXIT_FAILURE);
 	    }
 	} else {
-	    if ((open("a.html", O_WRONLY)) == -1) {
+	    if ((open("a.html", O_WRONLY | O_CREAT | O_TRUNC, 0644)) == -1) {
 	        perror("Output file :");
 		    exit(EXIT_FAILURE);
 	    }

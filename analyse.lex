@@ -47,11 +47,14 @@ number [0-9]+
 
 \} {return('}');}
 
+\\\{ {strncpy(yylval.word, "{", STR_LEN); return(WORD);}
+
+\\\} {strncpy(yylval.word, "}", STR_LEN); return(WORD);}
+
 % {comment = 1;}
 
-\\% {strncpy(yylval.word, "%", 256); return(WORD);}
+\\% {strncpy(yylval.word, "%", STR_LEN); return(WORD);}
 
-(\\)+ {strncpy(yylval.word, "\n", STR_LEN); return(WORD);}
 
 {number} {if (inDocument) {REJECT;} else {yylval.nb = atoi(yytext); return(NUMBER);}}
 
