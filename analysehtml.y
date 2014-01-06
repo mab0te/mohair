@@ -20,10 +20,10 @@ int charNb = 0;
 
 int width = 21;
 int fontSize = 4;
-int h1Size = 12;
-int h2Size = 10;
-int h3Size = 8;
-int h4Size = 6;
+int h1Size = 8;
+int h2Size = 7;
+int h3Size = 6;
+int h4Size = 5;
 
 int textIndent = 15;
 
@@ -115,9 +115,11 @@ int generateStyle() {
 	printf("}\n\n");
 	printf("  h2 {\n   ");
 	printf("font-size: %dmm;\n    ", h2Size);
+	printf("padding-left: 3mm;\n    ");
 	printf("}\n\n");
 	printf("  h3 {\n   ");
 	printf("font-size: %dmm;\n    ", h3Size);
+	printf("padding-left: 6mm;\n    ");
 	printf("}\n\n");
 	printf("  h4 {\n   ");
 	printf("font-size: %dmm;\n    ", h4Size);
@@ -129,9 +131,10 @@ int generateStyle() {
 	printf("  #authors {\n   ");
 	printf("text-align: right;\n    ");
 	printf("}\n\n");
-	printf("  div[id^=\"Lemme\"], div[id^=\"Definition\"] {\n   ");
+	printf("  div[id^=\"Lemme\"], div[id^=\"Définition\"] {\n   ");
 	printf("border: 1px dashed black;\n    ");
 	printf("padding: 5mm 5mm 0 5mm;\n    ");
+	printf("margin-bottom: 2mm;\n    ");
 	printf("}\n");
 	printf(" </style>\n");
 	return EXIT_SUCCESS;
@@ -328,12 +331,12 @@ env : LEMME
       {closePara(); closeEnv();}
     | DEF 
       '{' titre '}' 
-      {openEnv("Definition", &defNb, $3); openPara();}
+      {openEnv("Définition", &defNb, $3); openPara();}
       texte
       ENDENV
       {closePara(); closeEnv();}
     | DEF 
-      {openEnv("Definition", &defNb, NULL); openPara();
+      {openEnv("Définition", &defNb, NULL); openPara();
       }
       texte
       ENDENV
