@@ -4,7 +4,7 @@
 
 \begindocument
 
-Voici le rapport du projet de c\{ompilation de M1 Informatique de l'université de Rouen pour l'année 2013/2014. Ce rapport a été généré en utilisant l'application MoHAiR, développée en lex et yacc.
+Voici le rapport du projet de compilation de M1 Informatique de l'université de Rouen pour l'année 2013/2014. Ce rapport a été généré en utilisant l'application MoHAiR, développée en lex et yacc.
 
 \section{Présentation}
 
@@ -31,7 +31,7 @@ On les crée à l'aide des commandes \\section\{titre\} et \\ssection\{titre\}.
 
 \ssection{Les Paragraphes}
 
-Les paragraphes sont gérés automatiquement par l'application, néanmoins l'utilisateur peut, s'il le désire, créer un nouveau paragraphe à l'aide de la commande \\para. Les espaces et retours à la ligne superflus sont éliminés du code source.
+Les paragraphes sont gérés automatiquement par l'application, néanmoins l'utilisateur peut, s'il le désire, créer un nouveau paragraphe à l'aide de la commande \\para. Les espaces et retours à la ligne superflus sont éliminés du code source. L'utilisateur peut donc présenter ses sources comme bon lui semble sans aucune influence sur le rendu final.
 
 \ssection{Les Commentaires et l'Echappement}
 
@@ -77,3 +77,14 @@ Chaque commande renvoie un token propre à l'analyseur lexical, avec éventuelle
 L'analyseur syntaxique représente la majeure partie du travail. Il est fourni en deux versions: générateur de texte et générateur de HTML. Les deux versions contiennent un programme C qui récupère un fichier source et le chemin vers où compiler afin de produire un fichier texte ou HTML.
 \para
 Les différentes valeurs réglables sont stockées sous formes de variables globales. De nombreuses fonctions sont déclarées en entête et appelées à divers endroits dans la grammaire.
+\para
+On utilise un \%union pour gérer les deux types valeurs lexicales possible (string et int). On utilise un \%type pour évaluer récursivement les valeurs des titres. Le texte est quand à lui évalué en flux pour des questions de buffer.
+\para
+Les auteurs sont stockés dans une liste chaînée qui est parcourue et libérée en même temps lors de la création de l'entête du document.
+
+
+\ssection{Compilation}
+
+La version texte comprend analyse.y et analyse.lex tandis que la version HTML est basée sur analysehtml.y et analysehtml.lex.
+\para 
+On compile d'abord les fichiers lex, puis les yacc, puis les fichiers C.
