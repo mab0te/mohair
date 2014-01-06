@@ -19,6 +19,16 @@ number [0-9]+
 %%
 
 
+\\author {return(AUTHOR);}
+
+\\setpagewidth {return(WIDTH);}
+
+\\setsize {return(SETSIZE);}
+
+\\setindent {return(INDENT);}
+
+\\begindocument {inDocument = 1; return(INDOC);}
+
 \\title {firstWord = 0;return(TITLE);}
 
 \\para	{firstWord = 1;}
@@ -47,6 +57,8 @@ number [0-9]+
 
 \\\\ {strncpy(yylval.word, "\\", STR_LEN); return(WORD);}
 
+{number} {if (inDocument) {REJECT;} else {yylval.nb = atoi(yytext); return(NUMBER);}}
+
 {mot} {
   if (!comment) {
 	  strncpy(yylval.word, yytext, STR_LEN); 
@@ -63,7 +75,6 @@ number [0-9]+
     strncpy(yylval.word, " ", STR_LEN); return(WORD);
   }
 }
-    
 
 \n {if (comment == 1) {
       comment = 0;
