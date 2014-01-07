@@ -1,6 +1,6 @@
 \title{Un Beau Titre}
 
-ceci est une introduction tres longue qui depasse la longueur autorisee de 80 caracteres. Lorsqu'un espace est rencontre. \\
+ceci est une introduction tres longue qui depasse la longueur autorisee de 80 caracteres. Lorsqu'un espace est rencontre.
 La je demarre une nouvelle ligne.
 
 \lemme{titre d'un lemme}
@@ -8,7 +8,7 @@ contenu du lemme de l'introduction.
 \end
 Suite de l'introduction, ceci est un paragraphe apres un environnement. Test de mise en forme de la mort. Pour voir comment ca rend a la fin. Dans cette phrase j'utilise le caractere \%.
 \section
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper massa. Fusce vehicula venenatis fermentum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut.\para Un nouveau paragraphe. Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper massa. Fusce vehicula venenatis fermentum.
 \ssection{titre de sous section}Lorem ipsum dolor sit amet,    consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh eleifend viverra.
 
 \section{titre de deuxieme section}

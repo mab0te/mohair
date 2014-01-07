@@ -52,30 +52,165 @@
     <h1> Rapport   de   projet   de   compilation </h1>
   <div id='intro'>
     <p>
-Voici le rapport du projet de c{ompilation de M1 
-Informatique de l'université de Rouen pour l'année 2013/2014. Ce rapport
- a été généré en utilisant l'application MoHAiR, développée
- en lex et yacc.
+Voici le rapport du projet de compilation de M1 Informatique de l'université de
+ Rouen pour l'année 2013/2014. Ce rapport a été généré en utilisant 
+l'application MoHAiR, développée en lex et yacc.
     </p>
   </div>
   <div id='section1'>
     <h2> 1 : Présentation </h2>
     <p>
-Pour ce projet, nous avons été chargés de développer une 
-application de mise en page automatique. Cette application 
-prenant en entrée un fichier source particulier contenant des 
-marqueurs de mise en forme, devait produire en sortie un document 
-structuré. Ce document devait pouvoir être composé de section et de 
-sous section contenant du texte ainsi que des environnements 
-de définitions. 
+Pour ce projet, nous avons été chargés de développer une application de mise
+ en page automatique. Cette application prenant en entrée un fichier source 
+particulier contenant des marqueurs de mise en forme, devait produire en sortie 
+un document structuré. Ce document devait pouvoir être composé de section et 
+de sous section contenant du texte ainsi que des environnements de définitions.
+
     </p>
     <p>
-L'application a été conçue en utilisant les outils flex et
- yacc pour l'analyse lexicale et syntaxique respectivement. 
+L'application a été conçue en utilisant les outils flex et yacc pour 
+l'analyse lexicale et syntaxique respectivement. 
     </p>
   </div>
   <div id='section2'>
     <h2> 2 : Fonctionnalités </h2>
+    <p>
+Nous avions initialement créé une application qui produisait du texte brut. 
+Cette application est fournie avec les sources du projet mais ne représente pas
+ la version finale. En effet, notre version finale génère un document au 
+format HTML5, format universellement compatible, facilement éditable et 
+convertible. Nous avons repris la grammaire intégralement et l'avons enrichi à
+ cette fin.Nous commencerons donc par lister les fonctionnalités disponibles 
+dans les deux versions, puis celles reservées à la version HTML.
+    </p>
+  </div>
+  <div id='ssection1'>
+    <h3> 2.1 : Les   Sections </h3>
+    <p>
+Comme vous avez pu le constater, notre générateur permet de structurer le 
+document en sections et sous-sections. Ces différentes parties sont 
+numérotées automatiquement et peuvent avoir ou non un titre. 
+    </p>
+    <p>
+On les crée à l'aide des commandes \section{titre} et \ssection{titre}.
+    </p>
+  </div>
+  <div id='ssection2'>
+    <h3> 2.2 : Les   Paragraphes </h3>
+    <p>
+Les paragraphes sont gérés automatiquement par l'application, néanmoins 
+l'utilisateur peut, s'il le désire, créer un nouveau paragraphe à l'aide de 
+la commande \para. Les espaces et retours à la ligne superflus sont éliminés 
+du code source. L'utilisateur peut donc présenter ses sources comme bon lui 
+semble sans aucune influence sur le rendu final.
+    </p>
+  </div>
+  <div id='ssection3'>
+    <h3> 2.3 : Les   Commentaires   et   l'Echappement </h3>
+    <p>
+Il est possible d'ajouter des commentaires au code qui n'apparaitront pas dans 
+le document compilé à l'aide du caractère %.             Pour afficher les 
+caractères spéciaux tels que \ et %, il suffit de les précéder dans le code 
+du caractère d'échappement "\".
+    </p>
+  </div>
+  <div id='ssection4'>
+    <h3> 2.4 : Les   Environnements </h3>
+    <p>
+Deux environnements sont disponibles actuellement dans MoHAiR, le lemme et la 
+définition. Ils sont tous les deux numérotés automatiquement. 
+    </p>
+  <div id ='Lemme1'>
+    <h4> Lemme 1 : [Voici   un   lemme] </h4>
+    <p>
+On le débute avec \lemme{titre} et on le termine avec \end.
+    </p>
+  </div>
+  <div id ='Définition1'>
+    <h4> Définition 1 : [Voici   une   définition] </h4>
+    <p>
+On la débute avec \def{titre} et on la termine avec \end.
+    </p>
+  </div>
+  </div>
+  <div id='ssection5'>
+    <h3> 2.5 : Le   Titre   et   Les   Auteurs   (HTML) </h3>
+    <p>
+Dans la version HTML, le document est précédé d'une partie "déclaration". 
+Cette partie est optionelle et terminée par la commande \begindocument. Dans 
+les déclarations, on peut ajouter un ou plusieurs auteurs avec \author et un 
+titre de document avec \title{titre}.
+    </p>
+  </div>
+  <div id='ssection6'>
+    <h3> 2.6 : Le   Style   (HTML) </h3>
+    <p>
+Il est possible de paramêtrer certains éléments du style de la page:
+    </p>
+    <p>
+- \setindent{entier} permet de fixer l'indentation des nouveaux paragraphes (en 
+mm).
+    </p>
+    <p>
+- \setpagewidth{entier} permet de fixer la largeur de la page (en mm).
+    </p>
+    <p>
+- \setsize{element}{entier} permet de fixer la taille de la police (en mm) pour 
+divers éléments du document. 
+    </p>
+    <p>
+Les éléments modifiables sont: title, section, ssection, env et text.
+    </p>
+  </div>
+  <div id='section3'>
+    <h2> 3 : Technique </h2>
+  </div>
+  <div id='ssection1'>
+    <h3> 3.1 : Lex </h3>
+    <p>
+L'analyseur lexical est relativement simple. Deux expressions régulières 
+définissent respectivement les mots et les nombres. Deux contextes déterminent
+ respectivement si on est dans ou hors d'un commentaire et si on est dans la 
+partie déclaration ou dans le document en lui même.
+    </p>
+    <p>
+Chaque commande renvoie un token propre à l'analyseur lexical, avec 
+éventuellement une valeur associée.
+    </p>
+  </div>
+  <div id='ssection2'>
+    <h3> 3.2 : Yacc </h3>
+    <p>
+L'analyseur syntaxique représente la majeure partie du travail. Il est fourni 
+en deux versions: générateur de texte et générateur de HTML. Les deux 
+versions contiennent un programme C qui récupère un fichier source et le 
+chemin vers où compiler afin de produire un fichier texte ou HTML.
+    </p>
+    <p>
+Les différentes valeurs réglables sont stockées sous formes de variables 
+globales. De nombreuses fonctions sont déclarées en entête et appelées à 
+divers endroits dans la grammaire.
+    </p>
+    <p>
+On utilise un %union pour gérer les deux types valeurs lexicales possible 
+(string et int). On utilise un %type pour évaluer récursivement les valeurs 
+des titres. Le texte est quand à lui évalué en flux pour des questions de 
+buffer.
+    </p>
+    <p>
+Les auteurs sont stockés dans une liste chaînée qui est parcourue et 
+libérée en même temps lors de la création de l'entête du document.
+    </p>
+  </div>
+  <div id='ssection3'>
+    <h3> 3.3 : Compilation </h3>
+    <p>
+La version texte comprend analyse.y et analyse.lex tandis que la version HTML 
+est basée sur analysehtml.y et analysehtml.lex.
+    </p>
+    <p>
+On compile d'abord les fichiers lex, puis les yacc, puis les fichiers C.
+    </p>
  </div>
  </body>
 </html>

@@ -1,0 +1,52 @@
+\setsize{section}{7}
+\setsize{ssection}{6}
+\setsize{env}{5}
+\setsize{text}{4}
+\setsize{title}{14}
+\author{Ferry Gaetan}
+\author{Zigh Benjamin}
+\title{Un très gros titre Titre}
+
+\begindocument
+
+
+ceci est une introduction tres longue qui depasse la longueur autorisee de 80 caracteres. Lorsqu'un espace est rencontre.
+
+\lemme{titre d'un lemme}
+contenu du lemme de l'introduction.
+\end
+%Ceci est un commentaire
+Suite de l'introduction, ceci est un paragraphe apres un environnement. Test de mise en forme de la mort. Pour voir comment ca rend a la fin. Dans cette phrase j'utilise le caractere \%.
+\section
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut. \para Un nouveau pragraphe.Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper massa. Fusce vehicula venenatis fermentum.
+\ssection{titre de sous section}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut. Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh eleifend viverra.
+
+\section{titre de deuxieme section}
+\ssection{sous section direct}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin. Aliquam pharetra varius arcu, feugiat laoreet ipsum interdum ut.
+
+\def{Definition}
+  Une definition est une portion de texte visant a montrer a son lecteur une image de son objet.
+\end
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin.
+
+\ssection
+ Contenu d'une sous section sans titre.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo neque rhoncus tortor gravida sollicitudin.
+
+\lemme{titre d'un autre lemme}
+ Cras lacinia turpis vel massa egestas mattis. Aenean at massa a nibh eleifend viverra. Quisque vitae dolor pulvinar, sollicitudin sem sed, semper massa.
+\end
+
+Suite de la sous section
+
+\section{Encore une section}
+Le contenu de la section supplementaire
+
+\section
+\ssection
+\section
+\ssection
+\ssection
+LALALALA
