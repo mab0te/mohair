@@ -1,4 +1,7 @@
 mohair
 ======
 
-Une (horrible) alternative à LaTeX.
+Une application pour traduire du code MoHAiR en une page HTML formatée.
+MoHAiR permet la création de sections, sous sections et environnements à la manière de LaTeX.
+
+Ce projet est basé sur un sujet universitaire proposé aux Master 1 SSI à l'Université de Rouen.
